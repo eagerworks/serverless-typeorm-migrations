@@ -29,6 +29,7 @@ const handler = (handlerName: string) => async (
   context.callbackWaitsForEmptyEventLoop = false;
 
   const migration: Migration = new Migration({
+    name: "default_migrations",
     type: getEngine(),
     url: process.env.SLS_TYPEORM_MIGRATIONS_DATABASE_URL,
     migrations: [getMigrationFolder()],
